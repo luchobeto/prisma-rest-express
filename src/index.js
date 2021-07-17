@@ -1,5 +1,6 @@
 const express = require('express')
 const { PrismaClient } = require('@prisma/client')
+const port = process.env.PORT || 4300;
 
 const prisma = new PrismaClient()
 const app = express()
@@ -147,7 +148,7 @@ app.get('/feed', async (req, res) => {
 })
 
 
-const server = app.listen(3000, () =>
+const server = app.listen(port, () =>
   console.log(`
 🚀 Server ready at: http://localhost:3000
 ⭐️ See sample requests: http://pris.ly/e/ts/rest-express#3-using-the-rest-api`
